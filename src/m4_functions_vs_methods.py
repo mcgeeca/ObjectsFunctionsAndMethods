@@ -258,10 +258,10 @@ def try_methods_and_functions():
     ugly.speed = 1
     draw_many_squares(ugly, 2, 100, 30)
     ugly.speed = 5
-    ugly.pen = rg.Pen("red", 5)
-    draw_many_squares(ugly, 10, 50, 30)
+    ugly.pen.color = "red"
+    draw_many_squares(ugly, 10, 50, 15)
     ugly.speed = 100
-    ugly.pen = rg.Pen("red", 35)
+    ugly.pen.thickness = 35
     draw_many_squares(ugly, 8, 300, 60)
     ugly.pen = rg.Pen("black", 3)
     ugly.backward(200)
