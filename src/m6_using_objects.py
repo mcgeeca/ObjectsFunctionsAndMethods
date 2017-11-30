@@ -15,6 +15,8 @@ def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
     two_circles()
+    circle_and_rectangle()
+    lines()
 
 def two_circles():
     """
@@ -76,7 +78,7 @@ def circle_and_rectangle():
            150.0
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its doc-string above.
+    # DONE: 3. Implement this function, per its doc-string above.
     #   -- ANY objects that meet the criteria are fine.
     # Put a statement in   main   to test this function
     #    (by calling this function).
@@ -84,7 +86,27 @@ def circle_and_rectangle():
     # IMPORTANT: Use the DOT TRICK to guess the names of the relevant
     #       instance variables for outline thickness, etc.
     # ------------------------------------------------------------------
-
+    window = rg.RoseWindow()
+    center_of_circle = rg.Point(100,150)
+    rectangle = rg.Rectangle(corner_1 = rg.Point(200, 120), corner_2 =
+    rg.Point(120, 200))
+    center_of_rectangle = rectangle.get_center()
+    circle = rg.Circle(center_of_circle, 5)
+    circle.fill_color = "blue"
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+    window.render()
+    print(circle.outline_thickness)
+    print(circle.fill_color)
+    print(circle.center)
+    print(center_of_circle.x)
+    print(center_of_circle.y)
+    print(rectangle.outline_thickness)
+    print(rectangle.fill_color)
+    print(center_of_rectangle)
+    print(center_of_rectangle.x)
+    print(center_of_rectangle.y)
+    window.close_on_mouse_click()
 
 def lines():
     """
@@ -109,9 +131,20 @@ def lines():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     # ------------------------------------------------------------------
-
+    window = rg.RoseWindow()
+    line_1 =rg.Line(rg.Point(100, 300), rg.Point(200, 400))
+    line_2 = rg.Line(rg.Point(100, 200), rg.Point(300, 400))
+    line_2.thickness = 5
+    line_2.attach_to(window)
+    line_1.attach_to(window)
+    window.render()
+    center_of_line = line_2.get_midpoint()
+    print(center_of_line)
+    print(center_of_line.x)
+    print(center_of_line.y)
+    window.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
